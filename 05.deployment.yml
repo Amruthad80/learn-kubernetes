@@ -1,13 +1,13 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
-  name: rs-01
+  name: deploy-01
   labels:
     app: nginx
   annotaions:
     controller.kubernetes.io/pod-deletion-cost: "10"
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: nginx
@@ -18,17 +18,4 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: docker.io/nginx
-
-
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: rs-01-pod
-  labels:
-    app: nginx
-spec:
-  containers:
-    - name: nginx
-      image: docker.io/nginx
+          image: docker.io/nginx:1.20
