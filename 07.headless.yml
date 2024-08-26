@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: docker.io/rkalluru/nginx:hostname-print
+          image: docker.io/rkalluru/nginx
 
 ---
 apiVersion: v1
