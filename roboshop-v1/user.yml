@@ -16,7 +16,7 @@ kind: Pod
 metadata:
   name: user
   namespace: roboshop
-  lables:
+  labels:
     appName: user
 spec:
   containers:
